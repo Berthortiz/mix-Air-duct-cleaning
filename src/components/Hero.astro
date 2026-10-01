@@ -1,0 +1,177 @@
+---
+import { Icon } from "astro-icon/components";
+import ButtonPrimary from "./ButtonPrimary.astro";
+import Picture from "astro/components/Picture.astro";
+import bgHeroImg from "../assets/mix-hero.jpg";
+---
+
+<section id="hero-mix" class="relative h-full w-full body-font">
+    <!-- Fondo con imagen y overlay -->
+    <div class="absolute inset-0">
+        <img
+            src={bgHeroImg.src}
+            alt="Fondo hero"
+            class="h-full w-full object-cover object-center"
+        />
+    </div>
+
+    <div id="overlay" class="absolute inset-0 bg-black/35"></div>
+
+    <div
+        id="itemhero"
+        class="lg:max-w-7xl min-h-svh flex flex-col lg:flex-row justify-center md:items-center mx-auto pt-1 md:px-(--padding-all-web) md:justify-center gap-7 relative z-10"
+    >
+        <div
+            class="md:w-full lg:w-3/5 flex flex-col justify-center items-start md:text-left mb-0 md:mb-0 p-6 lg:px-0"
+        >
+            <spam class="text-white">Servicio Residencial y Comercial</spam>
+            <h1
+                class="text-white
+                leading-10 md:leading-14 lg:leading-18
+                font-bold
+                text-4xl md:text-5xl lg:text-6xl
+                mb-4"
+            >
+                Limpieza de Ductos de Aire en Florida.
+            </h1>
+            <p class="mb-8 leading-relaxed text-gray-200 md:text-[1em]">
+                El polvo, moho y alérgenos acumulados en tus ductos afectan la
+                salud y el rendimiento de tu sistema HVAC. Inspeccionamos,
+                aspiramos y sanitizamos con equipos especializados, dejando tu
+                aire limpio y tu sistema funcionando mejor. Servicio para
+                hogares, oficinas y espacios comerciales en Florida.
+            </p>
+            <div class="flex md:flex-row w-full flex-col items-center gap-3">
+                <a
+                    href="https://wa.link/bqgy6d"
+                    class="buttonReserve px-6 bg-(--color-brand) text-white w-full text-center py-3 rounded-4xl flex justify-center gap-2 font-semibold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Reserva ahora por WhatsApp"
+                >
+                    Reserva Ahora
+                </a>
+                <a
+                    class="buttonReserve w-full px-6 py-3 rounded-full border border-white/50 flex items-center justify-center gap-2 text-white font-semibold hover:border-white/40 transition-colors"
+                    href="tel:+14076018961"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Llámanos y Reserva un viaje Ahora"
+                    aria-label="Abrir ejemplo.com en una nueva pestaña"
+                >
+                    <Icon name="icon-phone" /> +1 (407) 601-8961
+                </a>
+            </div>
+            <div
+                class="w-full flex flex-col md:flex-row justify-center gap-4 md:justify-start border-amber-50"
+            >
+                <!-- <ButtonPrimary  title="quam egestas"
+                    link="https://wa.link/bqgy6d"
+                    additionalClass="w-full md:w-fit px-4 py-2 text-white justify-center items-center text-[1.2em] border-2 border-[color:var(--color-brand)]"
+                > <Icon name="whatsapp-solid" slot="before-icon" size={20} class="" /> </ButtonPrimary>
+                 -->
+            </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center items-center text-white">
+            <!-- col-2 -->
+        </div>
+    </div>
+</section>
+
+<style>
+    #arrow-down-id::before {
+        content: "Ver Portafolio";
+        text-align: center;
+        color: rgb(200, 200, 200);
+        position: absolute;
+        z-index: 3;
+        width: 200px;
+        /* height: 30px; */
+        /* background-color: red; */
+        transform: translateX(calc(-50% + 20px));
+        top: 0px;
+        left: 0;
+    }
+    #arrow-down-id {
+        margin-top: 30px;
+        position: relative;
+    }
+
+    #overlay {
+        /* backdrop-filter: blur(5px); */
+        background-color: color-mix(in oklab, var(--color-brand) 10%, #000 60%);
+    }
+
+    #logo-bg {
+        opacity: 0.7;
+        position: relative;
+        /* border: 1px solid red; */
+        padding: 40px;
+    }
+
+    #container-logo-bg::before {
+        content: "";
+        /* border: 1px solid red; */
+
+        /* backdrop-filter: blur(5px); */
+
+        color: aqua;
+        position: absolute;
+        z-index: 10;
+    }
+
+    .hero {
+        --bg-transparent: 0.78;
+        /* linear-gradient(
+                rgba(0, 0, 0, var(--bg-transparent)),
+                rgba(0, 0, 0, var(--bg-transparent))
+            ) */
+        background-size: cover;
+        background-position: right;
+        height: 100vh;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        color: black;
+    }
+    /* 
+    .gradiente-title-hero {
+        background-image: linear-gradient(
+            to left,
+            #ffffff,
+            var(--grey-titanio)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    } */
+
+    /* Estilos base para Móvil (Mobile-first) */
+
+    #overlay {
+        backdrop-filter: blur(8px);
+        background-color: color-mix(in oklab, var(--color-brand) 20%, #000 70%);
+    }
+    /* Tablet (ancho mínimo de 768px) */
+    @media (min-width: 768px) {
+        #overlay {
+            backdrop-filter: blur(5px);
+            background-color: color-mix(
+                in oklab,
+                var(--color-brand) 10%,
+                #000 60%
+            );
+        }
+    }
+
+    /* PC / Laptop (ancho mínimo de 1024px) */
+    @media (min-width: 1024px) {
+        #overlay {
+            backdrop-filter: blur(0px);
+            /* background-color: color-mix(
+                in oklab,
+                var(--color-brand) 30%,
+                #000 0%
+            ); */
+        }
+    }
+</style>
