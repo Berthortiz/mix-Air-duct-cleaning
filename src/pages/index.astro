@@ -17,6 +17,7 @@ import HeroTwo from "../sections/HeroTwo.astro";
 import ServicesCards from "../sections/ServicesCards.astro";
 import About from "../sections/About.astro";
 import GalleryFilter from "../sections/GalleryFilter.astro";
+import Feacture from "../components/Feacture.astro";
 
 const title = "Air Dict Cleaning & Junk Removal en Florida | Mix Services";
 const description =
@@ -25,8 +26,10 @@ const description =
 
 <Layout title={title} description={description}>
 	<Hero />
-	<GalleryFilter />
+	<!-- <GalleryFilter /> -->
+	<Feacture />
 	<Projects />
+
 	<ServicesCards />
 	<ServicesSticky />
 	<Testimonials />

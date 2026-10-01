@@ -1,18 +1,19 @@
 ---
 import IconCheck from "../components/Icons/IconCheck.astro";
-import Picture from "astro/components/Picture.astro";
-import defaultBg from "../assets/img/sectionFeacture1.png";
+import { Picture } from "astro:assets";
+import defaultBg from "../assets/ductos-sucios.png";
+import type { ImageMetadata } from "astro";
 
 interface Props {
     flexRowRevers?: boolean;
-    bgImg?: string;
+    bgImg?: ImageMetadata;
 }
 
-const { flexRowRevers = false, bgImg = defaultBg } = Astro.props;
+const { flexRowRevers = true, bgImg = defaultBg } = Astro.props;
 ---
 
 <section
-    class="w-full h-fit flex md:items-center relative text-gray-600 body-font"
+    class="w-full h-fit flex md:items-center relative text-gray-600 body-font pt-16"
 >
     <div
         class:list={[
@@ -26,23 +27,31 @@ const { flexRowRevers = false, bgImg = defaultBg } = Astro.props;
         <div
             class="md:w-1/2 flex flex-col md:justify-center md:items-start md:text-left mb-16 md:mb-0 items-start text-start"
         >
-            <span
-                class="text-[1em] bg-indigo-100 px-3 py-1 rounded-2xl font-medium"
-                >Consectetur adipiscing</span
+            <spam class="text font-semibold"
+                >Mantenimiento Preventivo de Aires Acondicionados</spam
             >
+
             <h2
-                class="title-font sm:text-4xl lg:text-5xl md:text-4xl text-3xl mb-4 pt-5 font-medium text-(--color-secundary)"
+                class="text-(--color-brand)
+                leading-10 md:leading-14 lg:leading-10 xl:leading-14
+                font-bold
+                text-4xl md:text-5xl lg:text-4xl xl:text-5xl
+                mb-4"
             >
-                Duis sagittis ipsum. <br />
-                <span class="text-(--color-brand)"> Praesent</span> mauris.
+                ¿Rejillas sucias? <br /> Es Señal que tus ductos necesita limpieza!
+                <br />
             </h2>
             <p
-                class="md:max-w-[55ch] mb-8 leading-relaxed font-normal text-[1.1em] text-gray-700"
+                class="md:max-w-[55ch] mb-8 lg:text-[1em] leading-relaxed font-normal text-[1.1em] text-gray-700"
             >
-                Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent
-                taciti sociosqu ad litora torquent.
+                ¿Notas polvo acumulado, malos olores o alergias frecuentes?
+                Nuestros servicios de limpieza de ductos de aire están diseñados
+                para mejorar la calidad del aire que respiras. Atendemos
+                propiedades residenciales y comerciales en toda Florida,
+                eliminando polvo, moho, ácaros y otros contaminantes que se
+                acumulan en los sistemas HVAC con el tiempo.
             </p>
-            <ul class="flex flex-col gap-4 text-[1.1em]">
+            <!-- <ul class="flex flex-col gap-4 text-[1.1em]">
                 <li class="flex gap-3">
                     <span class="fill-current text-(--color-brand) mt-1">
                         <IconCheck size={22} />
@@ -66,7 +75,7 @@ const { flexRowRevers = false, bgImg = defaultBg } = Astro.props;
                         <p>Quas, molestiae aperiam incidunt repudiandae</p>
                     </div>
                 </li>
-            </ul>
+            </ul> -->
 
             <div class="flex justify-center">
                 <!-- <a
@@ -77,10 +86,8 @@ const { flexRowRevers = false, bgImg = defaultBg } = Astro.props;
         </div>
         <div class="md:w-1/2">
             <Picture
-                src={bgImg.src}
+                src={bgImg}
                 alt="testimonial"
-                width={50}
-                height={50}
                 formats={["webp"]}
                 quality={80}
                 loading="lazy"
