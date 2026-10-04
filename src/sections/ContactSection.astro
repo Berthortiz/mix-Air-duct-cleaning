@@ -1,0 +1,92 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+    id="contact-travel"
+    class="lg:max-w-7xl mx-auto px-5 py-30 flex flex-col gap-2 text-white"
+>
+    <div
+        class="contact-item min-h-100 text-center justify-center flex flex-col items-center p-8 md:px-16 py-10 gap-3 md:items-start"
+    >
+        <div class="overlay absolute inset-0 bg-black/35"></div>
+
+        <!-- <h2 class="font-protest-strike text-6xl">Contacto</h2> -->
+
+        <h3
+            class="md:w-1/2 title-font text-center md:text-left text-3xl xl:text-5xl sm:text-4xl md:text-4xl pb-3 font-bold"
+        >
+            Cotiza tu Servicio con Nosotros por Whatsapp
+        </h3>
+        <p class="text-contact max-w-[62ch] md:text-start pb-4">
+            Nos destacamos por ofrecer precios justos, resultados duraderos y un
+            trato directo sin letra chica. Con más de 9 años de experiencia en
+            Florida, tu tranquilidad está en buenas manos.
+        </p>
+        <!-- <div id="" class="[&_p]:text-[1.6em] flex flex-col gap-8 md:flex-row">
+            <div class="">
+                <p class="font-bold md:text-start">Teléfono:</p>
+                <div class="flex justify-center md:justify-start">
+                    <Icon name="icon-phone" size={30} />
+                    <address class="pt-1">+1 (407) 601-8961</address>
+                </div>
+            </div>
+            <div class="">
+                <p class="font-bold">Redes Sociales</p>
+                <div class="flex justify-center gap-3 pt-2 md:justify-start">
+                    <Icon name="icon-instagram" size={30} />
+                    <Icon name="icon-youtube" size={31} />
+                </div>
+            </div>
+        </div> -->
+        <a
+            href="https://wa.link/bqgy6d"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-(--color-brand) px-6 py-3 font-semibold text-white transition-colors hover:brightness-110"
+            aria-label="Escríbenos por WhatsApp"
+        >
+            <Icon name="whatsapp-solid" size={22} />
+            Mensaje vía WhatsApp
+        </a>
+    </div>
+</section>
+
+<style>
+    .contact-item {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        border: 7px solid var(--color-brand);
+        border-radius: 20px;
+    }
+    .contact-item::before {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        inset: 0;
+        border-radius: 12px;
+        background-image:
+            linear-gradient(120deg, rgba(0, 0, 0, 0.841) 40%, transparent 100%),
+            url("/mix-contact-bg.jpg");
+        background-size: cover;
+        background-position: top;
+    }
+    .overlay {
+        position: absolute;
+        z-index: -1;
+        inset: 0px;
+        border-radius: 12px;
+        backdrop-filter: blur(2px);
+        background-color: rgba(0, 0, 0, 0.22);
+    }
+    /* El efecto de vidrio se limita a móviles. */
+    @media (min-width: 768px) {
+        .overlay {
+            display: none;
+        }
+    }
+    .text-contact {
+        text-shadow: 4px 2px 2px rgb(23, 23, 23);
+    }
+</style>

@@ -7,24 +7,23 @@ import fgcImg from "../assets/img/FGC.png";
 const testimonials = [
   {
     description:
-      "¡Gran experiencia de trabajo! Creó una página web moderna, limpia y adaptada a celulares de forma súper rápida. El soporte y la atención al detalle fueron de diez.",
+      "Increíble servicio para mi hogar en Miami. Limpiaron los ductos de aire en un par de horas y la diferencia en la calidad del aire se sintió de inmediato. Súper profesionales, puntuales y dejaron todo impecable.",
     name: "Jeaustin Olivares",
-    job: "Especialista en Marketing ",
+    job: "Propietario en Miami",
     srcImg: olivaresImg,
   },
   {
     description:
-      "Como realtor, mi página web es mi carta de presentación. El diseño es sumamente elegante, moderno y adaptado perfectamente a celulares, El proceso de trabajo fue sumamente profesional.",
+      "Con el calor de Florida, nuestro aire acondicionado trabaja sin parar. El mantenimiento y lavado de climas que realizaron fue de diez; el equipo ahora enfría mucho mejor y el consumo de energía bajó notablemente.",
     name: "Maria Martell",
-    job: "Agente Inmobiliario",
+    job: "Administradora de Propiedades",
     srcImg: mariaImg,
   },
-
   {
     description:
-      "Para mi negocio de consultoría, proyectar confianza y seriedad lo es todo. Diseñó una página web impecable que explica mis servicios con claridad y permite que mis prospectos agenden citas.",
+      "Excelente trabajo de limpieza profunda en los ductos y sistemas de aire de nuestras oficinas. Eliminaron todo el polvo y moho acumulado. La atención al detalle y la puntualidad del equipo superaron nuestras expectativas.",
     name: "Consulting FGC",
-    job: "Asesor financiero",
+    job: "Gerente de Operaciones",
     srcImg: fgcImg,
   },
 ];
@@ -66,14 +65,18 @@ const schemaData = {
     <header
       class="w-full flex flex-col md:justify-center md:items-center text-center mb-16 md:mb-0"
     >
-      <span class="text-4xl px-3 py-1 text-white font-bold"> Testimonios </span>
+      <span
+        class="rounded-full bg-green-50 px-4 py-1 text-sm font-bold tracking-wide text-green-800"
+      >
+        Testimonios
+      </span>
       <h2
-        class="title-font sm:text-4xl lg:text-5xl text-3xl mb-4 pt-5 font-medium text-(--color-brand-secundary)"
+        class="title-font sm:text-4xl lg:text-5xl text-3xl mb-4 pt-5 font-medium text-slate-900"
       >
         Vea lo que dicen mis <span class="gradiente-title-g">clientes</span>
       </h2>
       <p
-        class="md:max-w-[75ch] mb-1 md:mb-8 leading-relaxed font-normal text-[1.1em] text-(--color-text-primary)"
+        class="md:max-w-[75ch] mb-1 md:mb-8 leading-relaxed font-normal text-[1.1em] text-slate-700"
       >
         He tenido la suerte de trabajar con personas y empresas increíbles. Más
         que clientes, los considero compañeros de proyecto, y estas son sus
@@ -86,8 +89,8 @@ const schemaData = {
         {
           testimonials.map((testimonial) => (
             <div class="swiper-slide">
-              <figure class="flex bg-[#D5D9DA10] justify-between flex-col gap-4 p-8 rounded-2xl shadow-sm text-left ">
-                <div class="flex text-[#4e86ff]" aria-label="5 estrellas">
+              <figure class="flex flex-col justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-8 text-left shadow-md">
+                <div class="flex text-amber-500" aria-label="5 estrellas">
                   <Icon name="star" size={20} />
                   <Icon name="star" size={20} />
                   <Icon name="star" size={20} />
@@ -95,12 +98,12 @@ const schemaData = {
                   <Icon name="star" size={20} />
                 </div>
 
-                <blockquote class="text-(--color-text-primary) ">
+                <blockquote class="text-slate-700">
                   <p>"{testimonial.description}"</p>
                 </blockquote>
 
                 <figcaption class="flex gap-4 mt-3">
-                  <div class="w-12 h-12 bg-indigo-200 rounded-full overflow-hidden">
+                  <div class="w-12 h-12 overflow-hidden rounded-full bg-green-100">
                     <img
                       src={testimonial.srcImg.src}
                       alt={`Foto de ${testimonial.name}`}
@@ -109,10 +112,12 @@ const schemaData = {
                     />
                   </div>
                   <div class="flex flex-col">
-                    <cite class="font-bold text-(--color-text-primary) not-italic">
+                    <cite class="font-bold not-italic text-slate-900">
                       {testimonial.name}
                     </cite>
-                    <span class="text-sm text-gray-500">{testimonial.job}</span>
+                    <span class="text-sm text-slate-600">
+                      {testimonial.job}
+                    </span>
                   </div>
                 </figcaption>
               </figure>
@@ -182,15 +187,16 @@ const schemaData = {
 
   .swiper-button-next,
   .swiper-button-prev {
-    background: oklab(100% 0 -0.00011 / 0.115);
+    --swiper-navigation-color: #166534;
+    background: #fff;
     top: 40% !important;
     /* left: % !important; */
     width: 40px;
     height: 40px;
     padding: 8px;
-
+    border: 1px solid #d1d5db;
     border-radius: 50%;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    box-shadow: 0 4px 8px -1px rgb(15 23 42 / 0.16);
   }
 
   .swiper-button-prev {
@@ -200,12 +206,12 @@ const schemaData = {
     right: 10px !important;
   }
   .swiper-pagination-bullet {
-    background: aliceblue !important;
+    background: #9ca3af !important;
   }
   .swiper-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-horizontal.swiper-pagination-bullets {
     .swiper-pagination-bullet {
-      background: rgb(247, 247, 250);
+      background: #9ca3af;
       /* margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px); */
     }
   }

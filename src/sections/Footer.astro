@@ -1,13 +1,140 @@
 ---
-const currentYear = new Date().toLocaleDateString("es-ES", {
-    year: "numeric",
-    // month: "long",
-    // day: "numeric",
-});
+import { Icon } from "astro-icon/components";
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer
-    class="h-18 flex justify-center items-center text-gray-400 bg-gray-900/60"
->
-    <p>© Berth Ortiz - {`${currentYear}`}</p>
+<footer class="site-footer text-white">
+    <div class="mx-auto max-w-7xl px-6 py-12 md:px-10">
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="flex flex-col items-start gap-4">
+                <a href="/" aria-label="Mix Services, página de inicio">
+                    <img
+                        src="/mix-logo-white.svg"
+                        alt="Mix Services"
+                        class="h-12 w-auto"
+                        loading="lazy"
+                    />
+                </a>
+                <p class="max-w-xs text-sm leading-relaxed text-white/85">
+                    Limpieza de ductos de aire, mantenimiento de HVAC y retiro
+                    de muebles para hogares y negocios en Florida.
+                </p>
+            </div>
+
+            <nav aria-label="Enlaces del sitio">
+                <h2 class="mb-4 text-base font-bold">Enlaces</h2>
+                <ul
+                    class="flex flex-col items-start gap-3 text-sm text-white/85"
+                >
+                    <li><a class="footer-link" href="/">Inicio</a></li>
+                    <li>
+                        <a class="footer-link" href="#mixAlert"
+                            >Señales de limpieza</a
+                        >
+                    </li>
+                    <li>
+                        <a class="footer-link" href="#contact-travel"
+                            >Contacto</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+
+            <div>
+                <h2 class="mb-4 text-base font-bold">Servicios</h2>
+                <ul class="flex flex-col gap-3 text-sm text-white/85">
+                    <li>Limpieza de ductos de aire</li>
+                    <li>Mantenimiento de aire acondicionado</li>
+                    <li>Retiro de muebles y artículos voluminosos</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="mb-4 text-base font-bold">Contacto</h2>
+                <address
+                    class="flex flex-col items-start gap-3 text-sm not-italic text-white/85"
+                >
+                    <a class="footer-link" href="tel:+14076018961">
+                        +1 (407) 601-8961
+                    </a>
+                    <a
+                        class="footer-link"
+                        href="https://wa.link/bqgy6d"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Escríbenos por WhatsApp
+                    </a>
+                    <span>Florida, Estados Unidos</span>
+                </address>
+                <div class="mt-5 flex items-center gap-4">
+                    <a
+                        class="social-link"
+                        href="https://www.instagram.com/berth_ortiz/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram de Mix Services"
+                        title="Instagram"
+                    >
+                        <Icon name="icon-instagram" size={22} />
+                    </a>
+                    <a
+                        class="social-link"
+                        href="https://youtube.com/@berthortiz?si=BBZQJ3pbdA6iKWga"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube de Mix Services"
+                        title="YouTube"
+                    >
+                        <Icon name="icon-youtube" size={24} />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="mt-10 flex flex-col gap-2 border-t border-white/25 pt-5 text-sm text-white/85 sm:flex-row sm:items-center sm:justify-between"
+        >
+            <p>© {currentYear} Mix Services. Todos los derechos reservados.</p>
+            <p>Servicio residencial y comercial en Florida.</p>
+        </div>
+    </div>
 </footer>
+
+<style>
+    .site-footer {
+        background-color: color-mix(in srgb, var(--color-brand) 68%, #000);
+    }
+
+    .footer-link {
+        transition: color 160ms ease;
+    }
+
+    .footer-link:hover,
+    .footer-link:focus-visible {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+
+    .social-link {
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(255 255 255 / 0.55);
+        border-radius: 9999px;
+        color: #fff;
+        transition:
+            background-color 160ms ease,
+            color 160ms ease;
+    }
+
+    .social-link:hover,
+    .social-link:focus-visible {
+        background-color: #fff;
+        color: #246f3e;
+    }
+</style>

@@ -5,63 +5,70 @@ import ButtonPrimary from "../components/ButtonPrimary.astro";
 // src/pages/servicios.astro
 const services = [
     {
-        icon: "web-icon",
-        title: "Portafolio Web",
+        id: "1",
+        image: "/aler1.jpg",
+        imageAlt: "Primera señal de que los ductos necesitan limpieza",
+        title: "Polvo excesivo en rejillas y mueble",
         description:
-            "Creación de sitios web informativos y portafolios profesionales 💼. Perfecto para mostrar tu trabajo.",
+            "Si limpias con frecuencia y el polvo vuelve a aparecer rápidamente en rejillas, muebles y superficies, el sistema podría estar distribuyendo partículas acumuladas. Una inspección de los ductos y del filtro ayuda a localizar el origen del polvo y a determinar qué mantenimiento necesita el sistema.",
     },
     {
-        icon: "code-icon",
-        title: "Página web a medida",
+        id: "2",
+
+        image: "/aler-2.jpg",
+        imageAlt: "Segunda señal de que los ductos necesitan limpieza",
+        title: "Flujo de aire desigual o débil",
         description:
-            "Desarrollo exclusivo, priorizando la velocidad y mostras funciones específicas de tu negocio. Perfecto para Inmobiliarias, Academias Online, etc.",
+            "Si algunas habitaciones reciben poco aire mientras otras mantienen una temperatura distinta, podría existir una obstrucción o una distribución irregular del flujo. La acumulación de polvo y residuos en los ductos es una posible causa. Una revisión permite evaluar el sistema y recomendar la limpieza adecuada.",
     },
     {
-        icon: "shop",
-        title: "Tiendas Online",
+        id: "3",
+
+        image: "/aler-3.jpg",
+        imageAlt: "Tercera señal de que los ductos necesitan limpieza",
+        title: "Alergias o síntomas respiratorio",
         description:
-            "Lleva tu negocio al siguiente nivel con una tienda virtual completa y pagos seguros.",
+            "Un aumento de estornudos, tos o irritación en los ojos y la garganta, especialmente cuando el aire acondicionado está encendido, puede ser una señal de partículas circulando en el hogar. El polvo, el moho u otros residuos pueden influir en la calidad del aire; una inspección ayuda a identificar el origen.",
     },
 ];
 ---
 
-<section class="relative overflow-hidden lg:py-24">
-    <div
+<section id="mixAlert" class="relative overflow-hidden lg:py-24">
+    <!-- <div
         class="stardust absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-7deg] z-0 scale-x-[2.5] scale-y-[4.2] rounded-full mask-radial-gradient h-56 md:h-80 lg:h-96 w-full pointer-events-none opacity-80"
     >
-    </div>
+    </div> -->
 
     <h2
-        class="title-font text-center text-3xl sm:text-4xl md:text-4xl lg:text-4xl mb-4 pt-5 px-3 pb-10 font-bold text-(--color-brand-secundary)"
+        class="title-font relative z-10 text-center text-4xl sm:text-4xl md:text-4xl lg:text-4xl mb-4 pt-15 px-3 pb-10 font-bold text-green-100"
     >
-        <span class="gradiente-title-g">¡Creamos </span>la Páginas web que
-        necesitas!
+        3 Señales que tus ductos necesita limpieza!
     </h2>
     <div
         class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 lg:max-w-7xl mx-auto relative z-10"
     >
         {
             services.map((service) => (
-                <div class="px-8 py-10 md:px-10 md:py-14 rounded-lg border border-zinc-500/20 backdrop-blur-3xl bg-zinc-500/5 flex flex-col items-center text-center gap-4 hover:border-zinc-500/40 transition-all duration-300 group">
-                    <span class="text-6xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                        <Icon
-                            name={
-                                service.icon === "" ? "star" : `${service.icon}`
-                            }
-                            size={50}
-                            class="text-(--color-brand-secundary) w-full h-auto"
-                        />
-                    </span>
-                    <h3 class="text-xl font-semibold text-white">
+                <div class="px-8 py-10 md:px-10 md:py-10 rounded-lg border border-zinc-500/20 backdrop-blur-3xl bg-white flex flex-col items-left text-center gap-4 hover:border-zinc-500/40 transition-all duration-300 group">
+                    <img
+                        src={service.image}
+                        alt={service.imageAlt}
+                        class="w-full aspect-autoobject-cover rounded-md"
+                        loading="lazy"
+                    />
+                    <spam id="numberAlert" class="text-left text-2xl">
+                        {service.id}
+                    </spam>
+                    <h3 class="text-3xl font-bold text-left  text-(--color-brand)">
                         {service.title}
                     </h3>
-                    <p class="text-gray-400 text-[15px] leading-relaxed">
+                    <p class="text-gray-400  text-left text-[15px] leading-relaxed">
                         {service.description}
                     </p>
                     <ButtonPrimary
                         title="Contactar"
                         link="https://wa.link/bqgy6d"
-                        additionalClass="px-4 py-2 text-white items-center"
+                        additionalClass="!w-full rounded-4xl justify-center px-4 py-2 text-white items-center"
                     >
                         {" "}
                         <Icon
@@ -78,6 +85,35 @@ const services = [
 </section>
 
 <style>
+    #numberAlert {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+        padding: 6px 14px;
+        color: white;
+        font-weight: 600;
+        background-color: var(--color-brand);
+        border-radius: 10px;
+    }
+
+    #mixAlert {
+        isolation: isolate;
+        background-image: url("/mix-contact.png");
+        background-position: center;
+    }
+    #mixAlert::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("/overlay-alert-mix.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+        pointer-events: none;
+    }
     .mask-radial-gradient {
         -webkit-mask-image: radial-gradient(
             rgba(0, 0, 0, 0.8) 0%,
