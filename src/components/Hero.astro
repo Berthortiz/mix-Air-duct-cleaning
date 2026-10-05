@@ -5,7 +5,7 @@ import Picture from "astro/components/Picture.astro";
 import bgHeroImg from "../assets/mix-hero.jpg";
 ---
 
-<section id="hero-mix" class="relative h-full w-full body-font">
+<section id="hero-mix" class="relative h-full w-full body-font pt-34 pb-10">
     <!-- Fondo con imagen y overlay -->
     <div class="absolute inset-0">
         <img
@@ -19,7 +19,7 @@ import bgHeroImg from "../assets/mix-hero.jpg";
 
     <div
         id="itemhero"
-        class="lg:max-w-7xl min-h-svh flex flex-col lg:flex-row justify-center md:items-center mx-auto pt-1 md:px-(--padding-all-web) md:justify-center gap-7 relative z-10"
+        class="lg:max-w-7xl min-h-svh flex flex-col lg:flex-row justify-center md:items-center mx-auto pt-1 md:px-(--padding-all-web) md:justify-center relative z-10"
     >
         <div
             class="md:w-full lg:w-3/5 flex flex-col justify-center items-start md:text-left mb-0 md:mb-0 p-6 lg:px-0"
@@ -77,6 +77,21 @@ import bgHeroImg from "../assets/mix-hero.jpg";
             </div>
         </div>
         <div class="lg:w-1/2 flex justify-center items-center text-white">
+            <div class="w-full p-8 lg:invisible">
+                <div class="overflow-hidden rounded-3xl bg-black/40">
+                    <Picture
+                        src={bgHeroImg}
+                        alt="Imagen de nuestra historia"
+                        width={1432}
+                        height={810}
+                        formats={["webp"]}
+                        quality={80}
+                        loading="lazy"
+                        decoding="async"
+                        class="block w-full object-contain"
+                    />
+                </div>
+            </div>
             <!-- col-2 -->
         </div>
     </div>
