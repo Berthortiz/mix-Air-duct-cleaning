@@ -10,7 +10,7 @@ interface Props {
     bgImg?: ImageMetadata;
 }
 
-const { flexRowRevers = true, bgImg = defaultBg } = Astro.props;
+const { flexRowRevers = false, bgImg = defaultBg } = Astro.props;
 ---
 
 <section
@@ -19,11 +19,13 @@ const { flexRowRevers = true, bgImg = defaultBg } = Astro.props;
     <div
         class:list={[
             {
+                "flex-col-reverse": flexRowRevers,
+                "flex-col": !flexRowRevers,
                 "md:flex-row-reverse": flexRowRevers,
                 "md:flex-row": !flexRowRevers,
             },
         ]}
-        class=`flex flex-col md:gap-20 lg:max-w-7xl mx-auto py-10 px-6 md:px-14 items-center relative z-10`
+        class=`flex md:gap-20 lg:max-w-7xl mx-auto py-10 px-6 md:px-14 items-center relative z-10`
     >
         <div
             class="md:w-1/2 flex flex-col md:justify-center md:items-start md:text-left mb-16 md:mb-0 items-start text-start"
@@ -56,7 +58,7 @@ const { flexRowRevers = true, bgImg = defaultBg } = Astro.props;
                 href="https://wa.me/14076018961"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 rounded-full bg-(--color-brand) px-6 py-3 font-semibold text-white transition-colors hover:brightness-110"
+                class="inline-flex w-full lg:w-fit items-center justify-center gap-2 rounded-full bg-(--color-brand) px-6 py-3 font-semibold text-white transition-colors hover:brightness-110"
                 aria-label="Escríbenos por WhatsApp"
             >
                 <!-- <Icon name="whatsapp-solid" size={22} /> -->
@@ -107,6 +109,6 @@ const { flexRowRevers = true, bgImg = defaultBg } = Astro.props;
             />
         </div>
     </div>
-</section>
 
-<style></style>
+    <style></style>
+</section>
