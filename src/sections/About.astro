@@ -1,89 +1,132 @@
 ---
 import { Icon } from "astro-icon/components";
-import ButtonPrimary from "../components/ButtonPrimary.astro";
-import Picture from "astro/components/Picture.astro";
-import ImgAbout from "../assets/img/pexels-arina-krasnikova-5950092.jpg";
+import { Picture } from "astro:assets";
 ---
 
-<section
-    id="AboutSecticon"
-    class="hero w-full min-h-120 md:items-center relative text-gray-600 body-font"
->
+<section id="about-mix" class="relative h-full w-full body-font py-20">
     <!-- Fondo con imagen y overlay -->
-    <!-- <div class="absolute left-0 right-0">
-        <img src={bgHeroImg.src} alt="Fondo hero" class="w-full" />
-        </div> -->
+    <div class="absolute inset-0">
+        <img
+            src="/mix-about.jpg"
+            alt="Fondo hero"
+            class="h-full w-full object-cover object-center"
+        />
+    </div>
 
-    <div id="overlay" class="absolute inset-0 indent-5"></div>
+    <div id="overlay" class="absolute inset-0 bg-black/35"></div>
 
-    <!-- Contenido parincipal -->
     <div
-        class="flex lg:max-w-7xl mx-auto px-4 md:px-14 py-14 md:flex-row lg:flex-row-reverse flex-col items-center gap-10 relative z-10"
+        id="itemhero"
+        class="lg:max-w-7xl min-h-svh flex flex-col lg:flex-row justify-center md:items-center mx-auto pt-1 md:px-(--padding-all-web) md:justify-center relative z-10"
     >
         <div
-            class="md:w-3/5 md:pr-16 flex flex-col md:justify-center md:items-start md:text-left mb-0 md:mb-0 items-center text-center"
+            class="md:w-full lg:w-3/5 flex flex-col justify-center items-start md:text-left mb-0 md:mb-0 p-6 lg:px-0 md:gap-4"
         >
-            <h2
-                class="title-font
-                leading-10 lg:leading-10 xl:leading-14
-                capitalize
+            <img
+                class="w-20 lg:w-40 xl:50"
+                src="/mix-logo-simple.svg"
+                alt="Mix Services"
+            />
+
+            <spam class="text-green-100 text-6xl font-black"
+                >Nuestra historia</spam
+            >
+            <h1
+                class="text-white
+                leading-10 md:leading-14 lg:leading-13
                 font-bold
-                text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl
-                mb-4
-                text-(--color-secundary)"
+                text-4xl md:text-5xl lg:text-5xl
+                mb-4"
             >
-                <p
-                    class="title-font
-                leading-5 lg:leading-6
-                
-                font-normal
-                text-3xl sm:text-4xl md:text-4xl lg:text-2xl
-                mb-4
-                text-(--color-brand-secundary)"
-                >
-                    Hola, soy Berth Ortiz.
-                </p>
-
-                <span class="gradiente-title-g"> Desarrollos </span> web moderno y
-                optimizado. <br />
-            </h2>
-
+                9 Años de Excelencia en Limpieza de Ductos de Aire en Florida
+            </h1>
             <p
-                class="mb-8 leading-relaxed text-(--color-text-primary) md:text-[.9em]"
+                class="mb-8 leading-relaxed text-gray-200 md:text-[1em] lg:text-[.9em]"
             >
-                Para mí, construir una página web es mucho más que escribir
-                código; es un proceso de luthería digital. Al igual que al
-                tallar la madera para un instrumento, cada píxel y cada función
-                deben estar en el lugar exacto para que el resultado final sea
-                armonioso y eficiente. <br /><br /> Me especializo en crear ecosistemas
-                web modernos utilizando tecnologías de alto rendimiento como Astro,
-                React y Tailwind CSS. Mi enfoque no es solo que tu sitio se vea bien,
-                sino que vuele. En un mundo donde cada segundo de carga cuenta, me
-                dedico a entregar plataformas optimizadas, limpias y diseñadas para
-                ofrecer una experiencia de usuario impecable.
+                Desde hace más de 9 años, nos dedicamos a brindar soluciones
+                confiables y profesionales de limpieza de ductos de aire en toda
+                Florida. Nuestra historia comienza con un compromiso firme por
+                mejorar la calidad del aire en hogares y negocios, protegiendo
+                la salud de quienes los habitan. Con un equipo altamente
+                capacitado y tecnología especializada, nos enfocamos en eliminar
+                polvo, moho y contaminantes que afectan la eficiencia de los
+                sistemas HVAC y la pureza del ambiente.
+                <br />
+                <br /> Ya sea una casa familiar, un restaurante o una oficina comercial,
+                diseñamos cada servicio con atención personalizada, puntualidad y
+                resultados comprobables. Cada ducto limpio es parte de nuestra historia…
+                y nuestro futuro lo seguimos construyendo contigo.
             </p>
+            <div class="flex md:flex-row w-full flex-col items-center gap-3">
+                <a
+                    href="https://wa.me/14076018961"
+                    class="buttonReserve px-6 bg-(--color-brand) text-white w-full text-center py-3 rounded-4xl flex justify-center gap-2 font-semibold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Reserva ahora por WhatsApp"
+                >
+                    Reserva Ahora
+                </a>
+                <a
+                    class="buttonReserve w-full px-6 py-3 rounded-full border border-white/50 flex items-center justify-center gap-2 text-white font-semibold hover:border-white/40 transition-colors"
+                    href="tel:+14076018961"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Llámanos y Reserva un viaje Ahora"
+                    aria-label="Abrir ejemplo.com en una nueva pestaña"
+                >
+                    <Icon name="icon-phone" /> +1 (407) 601-8961
+                </a>
+            </div>
+            <div
+                class="w-full flex flex-col md:flex-row justify-center gap-4 md:justify-start border-amber-50"
+            >
+                <!-- <ButtonPrimary  title="quam egestas"
+                    link="https://wa.me/14076018961"
+                    additionalClass="w-full md:w-fit px-4 py-2 text-white justify-center items-center text-[1.2em] border-2 border-[color:var(--color-brand)]"
+                > <Icon name="whatsapp-solid" slot="before-icon" size={20} class="" /> </ButtonPrimary>
+                 -->
+            </div>
         </div>
-        <div class="md:w-2/5 w-5/6">
+        <div class="lg:w-1/2 flex justify-center items-center text-white p-10">
             <Picture
-                src={ImgAbout}
-                alt="testimonial"
-                width={50}
-                height={50}
+                src="/mix-about.jpg"
+                alt="Imagen de nuestra historia"
+                width={1432}
+                height={810}
                 formats={["webp"]}
                 quality={80}
                 loading="lazy"
                 decoding="async"
-                class="w-full object-contain rounded-2xl"
+                class="w-full object-contain lg:invisible rounded-2xl"
             />
+            <!-- col-2 -->
         </div>
     </div>
 </section>
 
 <style>
+    #arrow-down-id::before {
+        content: "Ver Portafolio";
+        text-align: center;
+        color: rgb(200, 200, 200);
+        position: absolute;
+        z-index: 3;
+        width: 200px;
+        /* height: 30px; */
+        /* background-color: red; */
+        transform: translateX(calc(-50% + 20px));
+        top: 0px;
+        left: 0;
+    }
+    #arrow-down-id {
+        margin-top: 30px;
+        position: relative;
+    }
+
     #overlay {
         /* backdrop-filter: blur(5px); */
-        padding: 20px;
-        border-radius: 8px;
+        background-color: color-mix(in oklab, var(--color-brand) 10%, #000 60%);
     }
 
     #logo-bg {
@@ -97,43 +140,65 @@ import ImgAbout from "../assets/img/pexels-arina-krasnikova-5950092.jpg";
         content: "";
         /* border: 1px solid red; */
 
-        backdrop-filter: blur(5px);
+        /* backdrop-filter: blur(5px); */
 
         color: aqua;
         position: absolute;
         z-index: 10;
     }
 
-    /* .hero {
-        background-image:
-            linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.8) 30%,
-                rgba(0, 0, 0, 0.1) 70%
-            ),
-            url("/images/bg-2.png");
+    .hero {
+        --bg-transparent: 0.78;
+        /* linear-gradient(
+                rgba(0, 0, 0, var(--bg-transparent)),
+                rgba(0, 0, 0, var(--bg-transparent))
+            ) */
         background-size: cover;
-        background-position: center;
-        height: fit-content;
+        background-position: right;
+        height: 100vh;
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         justify-content: center;
         color: black;
-    } */
-
+    }
+    /* 
     .gradiente-title-hero {
-        --color-gradient: #f34503;
         background-image: linear-gradient(
-            to right,
-            var(--color-brand-secundary),
-            var(--color-gradient)
+            to left,
+            #ffffff,
+            var(--grey-titanio)
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    } */
+
+    /* Estilos base para Móvil (Mobile-first) */
+
+    #overlay {
+        backdrop-filter: blur(8px);
+        background-color: color-mix(in oklab, var(--color-brand) 20%, #000 70%);
+    }
+    /* Tablet (ancho mínimo de 768px) */
+    @media (min-width: 768px) {
+        #overlay {
+            backdrop-filter: blur(5px);
+            background-color: color-mix(
+                in oklab,
+                var(--color-brand) 10%,
+                #000 60%
+            );
+        }
     }
 
-    .gradiente-title-hero {
-        color: #0090f7;
-        /* fallback */
+    /* PC / Laptop (ancho mínimo de 1024px) */
+    @media (min-width: 1024px) {
+        #overlay {
+            backdrop-filter: blur(0px);
+            /* background-color: color-mix(
+                in oklab,
+                var(--color-brand) 30%,
+                #000 0%
+            ); */
+        }
     }
 </style>
